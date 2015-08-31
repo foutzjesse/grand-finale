@@ -1,4 +1,5 @@
 package com.android.test;
+package javax.sound.sampled;
 
 import android.app.Activity;
 import android.os.Bundle;
