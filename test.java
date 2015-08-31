@@ -16,18 +16,11 @@ public class GrandFinale extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+    //Compiles and plays whole piece.
     private void playMusic(int tempo){
         try {
-            private Sequencer sequencer;
-            // Get default sequencer.
-            sequencer = MidiSystem.getSequencer(); 
-            if (sequencer == null) {
-                // Error -- sequencer device is not supported.
-                // Inform user and return...
-            } else {
-                // Acquire resources and make operational.
-                sequencer.open();
-            }
+            Sequencer sequencer = MidiSystem.getSequencer();
+            sequencer.open();
             
             private Sequence mySeq = new Sequence(Sequence.PPQ, 60);
             private Track track = mySeq.createTrack();
@@ -35,7 +28,7 @@ public class GrandFinale extends Activity {
             // Add events to track using makeEvent
             //track.add(makeEvent(command, channel, first byte, second byte, tick));
             
-            sequencer.setSequence(seq);
+            sequencer.setSequence(mySeq);
             sequencer.setTempoInBPM(tempo);
             sequencer.start();
         } catch(Exception exc){}
