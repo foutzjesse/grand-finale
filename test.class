@@ -1,0 +1,14 @@
+package com.companyname.projectname;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.SomeLayoutOrView;
+public class SomeName extends Activity {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        SomeLayoutOrView view = createOrGetView();
+        ...
+        setContentView(view);
+    }
+...
+}
