@@ -25,4 +25,6 @@ public class GrandFinale extends Application {
            }
          });   */     
     }
+    
+    AudioSystem Midi = new AudiSystem()
 }
