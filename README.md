@@ -8,16 +8,16 @@ Development:
 -Copy/paste measures
 
 =CHANNELS/PATCHES=
-*1/74 - Flute
-*2/72 - Clarinet
-*3/66 - A. Sax
-*4/67 - T. Sax
-*5/57 - Trumpet  (can shift to patch 60 - Muted Trumpet)
-*6/61 - Horn
-*7/58 - Trombone
-*8/59 - Tuba
-*9/(117 taiko; 118 mel tom; 119 synth drum; 48 timpani) - Tenors
-*10/1 - (Perc.)
+* 1/74 - Flute
+* 2/72 - Clarinet
+* 3/66 - A. Sax
+* 4/67 - T. Sax
+* 5/57 - Trumpet  (can shift to patch 60 - Muted Trumpet)
+* 6/61 - Horn
+* 7/58 - Trombone
+* 8/59 - Tuba
+* 9/(117 taiko; 118 mel tom; 119 synth drum; 48 timpani) - Tenors
+* 10/1 - (Perc.)
 Channels 12-16 will be filled as needed.
 Polyphonic maximum: 24 notes at once.
 
