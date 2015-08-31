@@ -1,14 +1,20 @@
-package com.companyname.projectname;
-import android.app.Activity;
-import android.os.Bundle;
-import android.widget.SomeLayoutOrView;
 public class SomeName extends Activity {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        SomeLayoutOrView view = createOrGetView();
-        ...
-        setContentView(view);
-    }
+@Override
+public void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+String message = "...";
+LinearLayout window = new LinearLayout(this);
+window.setVariousAttributes(…);
+Button b = new Button(this);
+b.setText("Button Label");
+b.setOnClickListener(new SomeHandler());
+mainWindow.addView(b);
 ...
+setContentView(window);
 }
+private class SomeHandler implements OnClickListener {
+@Override
+public void onClick(View clickedButton) {
+doSomething(...);
+}
+} }
