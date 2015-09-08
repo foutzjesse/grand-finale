@@ -20,7 +20,7 @@ public class GrandFinale extends Activity {
 //This contains the data used to construct the MIDI sequence.
 public static class MidiData{
     //MIDI messages
-    public ArrayList<ArrayList<int[]>> pianoRoll = new ArrayList<ArrayList<int[]>>();
+    public ArrayList<ArrayList<int[]>> score = new ArrayList<ArrayList<int[]>>();
     
     //Add note to pianoRoll
     public addNote
