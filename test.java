@@ -17,27 +17,43 @@ public class GrandFinale extends Activity {
         super.onCreate(savedInstanceState);
     }
     //Compiles and plays whole piece.
-    private void playMusic(int tempo){
+    public static void makeMusic(int tempo){
         try {
             Sequencer sequencer = MidiSystem.getSequencer();
             sequencer.open();
             
-            private Sequence mySeq = new Sequence(Sequence.PPQ, 60);
+            private Sequence mySeq = new Sequence(Sequence.PPQ, 120);
             private Track track = mySeq.createTrack();
+            public void addNote(int chan, int one, int two, int tick){
+                MidiEvent on = noteOn(chan, one, two, tick);
+                MidiEvent off = null;
+                
+            }
             
             // Add events to track using makeEvent
-            //track.add(makeEvent(command, channel, first byte, second byte, tick));
+            //track.add(addNote(command, channel, first byte, second byte, tick));
             
             sequencer.setSequence(mySeq);
             sequencer.setTempoInBPM(tempo);
-            sequencer.start();
+            public void play(){
+                sequencer.start();
+            }
         } catch(Exception exc){}
     }
-    private MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
+    public MidiEvent noteOn(int chan, int one, int two, int tick) {
        MidiEvent event = null;
        try {
            ShortMessage a = new ShortMessage();
-           a.setMessage(comd, chan, one, two);
+           a.setMessage(a.NOTE_ON, chan, one, two);
+           event = new MidiEvent(a, tick);
+       } catch (Exception exc){}
+       return event;
+    }
+    public MidiEvent noteOff(int chan, int one, int two, int tick) {
+       MidiEvent event = null;
+       try {
+           ShortMessage a = new ShortMessage();
+           a.setMessage(a.NOTE_OFF, chan, one, two);
            event = new MidiEvent(a, tick);
        } catch (Exception exc){}
        return event;
