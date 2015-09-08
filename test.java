@@ -19,23 +19,73 @@ public class GrandFinale extends Activity {
 }
 //This contains the data used to construct the MIDI sequence.
 public static class MidiData{
+    //Variables
+    private byte status;
+    private byte channel;
+    private byte one;
+    private byte two;
+    
     //MIDI messages
     public ArrayList<ArrayList<int[]>> score = new ArrayList<ArrayList<int[]>>();
     
     //Add note to pianoRoll
-    public addNote
+    public void addNote()
     
     //Delete note from pianoRoll
     //By default, replace with rest
-    public delNote
+    public void delNote()
     
     //Delete rest from pianoRoll
     //Shore up tick differences.
-    public delRest
+    public void delRest()
 }
-//This plays the MIDI data from MidiData, or saves the file.
-public class MidiPlay
 
+//This plays the MIDI data from MidiData
+public class MidiPlay{
+    //Get sequencer, open, create sequence, add track
+    Sequencer sequer = MidiSystem.getSequencer();
+    sequer.open();
+    private Sequence seq = new Sequence(Sequence.PPQ, 120);
+    private Track trk = seq.createTrack();
+    
+    //Import MIDI data.
+    public void midiImport(ArrayList<ArrayList<int[]>> score){
+        private Iterator itr = score.iterator();
+        private ArrayList<int[]> channel = new ArrayList<int[]>;
+        private int[] eventData = new int[];
+        private MidiEvent event = new MidiEvent();
+        private ShortMessage a = new ShortMessage();
+        
+        //Channel by channel
+        private int channelNo = 0;
+        while(itr.hasNext()){
+            channelNo++;
+            //Event by event
+            channel = score.next();
+            private Iterator jtr = channel.iterator();
+            while(jtr.hasNext()){
+                eventData = jtr.next();
+                
+                //Make MIDI message out of data
+                //status, channel, byte 1, byte 2
+                a.setMessage(eventData[0], channelNo, eventData[1], eventData[2]);
+                //Make MidiEvent out of message
+                //message, tick
+                event = new MidiEvent(a, eventData[3]);
+                
+                //Add to track
+                trk.add(event);
+            }
+        }
+        
+        //Play.
+        sequer.start();
+    }
+}
+//This saves the MIDI file
+public class MidiSave{
+    
+}
 /*********************************************************
     //Compiles and plays whole piece.
     public static void makeMusic(int tempo){
