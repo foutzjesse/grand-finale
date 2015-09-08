@@ -16,6 +16,27 @@ public class GrandFinale extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+}
+//This contains the data used to construct the MIDI sequence.
+public static class MidiData{
+    //MIDI messages
+    public ArrayList<ArrayList<int[]>> pianoRoll = new ArrayList<ArrayList<int[]>>();
+    
+    //Add note to pianoRoll
+    public addNote
+    
+    //Delete note from pianoRoll
+    //By default, replace with rest
+    public delNote
+    
+    //Delete rest from pianoRoll
+    //Shore up tick differences.
+    public delRest
+}
+//This plays the MIDI data from MidiData, or saves the file.
+public class MidiPlay
+
+/*********************************************************
     //Compiles and plays whole piece.
     public static void makeMusic(int tempo){
         try {
@@ -40,6 +61,7 @@ public class GrandFinale extends Activity {
             }
         } catch(Exception exc){}
     }
+    // code to add NOTE_ON
     public MidiEvent noteOn(int chan, int one, int two, int tick) {
        MidiEvent event = null;
        try {
